@@ -7,9 +7,9 @@ public class TC_003 extends BaseTest
 	{
 		init();
 		
-		launchBrowser("firefoxbrowser");
+		launchBrowser("chromebrowser");
 		
-		navigateUrl("amazonurl");
+		navigateUrl("iciciurl");
 
 	}
 

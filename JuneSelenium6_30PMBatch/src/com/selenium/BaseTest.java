@@ -5,7 +5,11 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.ProfilesIni;
 
 public class BaseTest 
 {
@@ -42,12 +46,25 @@ public class BaseTest
 		if(p.getProperty(browser).equals("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\MayBatch Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
+			
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("user-data-dir=C:\\Users\\DELL\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 10");
+			option.addArguments("--disable-notifications");
+			
+			driver = new ChromeDriver(option);
 		}
 		else if(p.getProperty(browser).equalsIgnoreCase("firefox"))
 		{
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\DELL\\Desktop\\MayBatch Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
+			
+			ProfilesIni p = new ProfilesIni();
+			FirefoxProfile profile = p.getProfile("juneFFprofile");
+			
+			FirefoxOptions option = new FirefoxOptions();
+			option.setProfile(profile);
+			option.addPreference("dom.webnotifications.enabled", false);
+			
+			driver = new FirefoxDriver(option);
 		}
 	}
 	
