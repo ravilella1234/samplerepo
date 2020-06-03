@@ -3,7 +3,9 @@ package com.selenium;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -19,6 +21,7 @@ public class BaseTest
 	public static Properties p;
 	public static Properties parentInstance;
 	public static Properties childInstance;
+	public static Properties orProp;
 	
 	public static void init() throws Exception
 	{
@@ -38,6 +41,10 @@ public class BaseTest
 		childInstance.load(fis);
 		String url = childInstance.getProperty("amazonurl");
 		System.out.println(url);
+		
+		fis = new FileInputStream(projectPath + "//or.properties");
+		orProp = new Properties();
+		orProp.load(fis);
 	}
 	
 	
@@ -73,6 +80,51 @@ public class BaseTest
 	{
 		//driver.get(url);
 		driver.navigate().to(childInstance.getProperty(url));
+	}
+	
+	
+	public static WebElement getElement(String locatorKey) 
+	{
+		WebElement element = null;
+		
+		if(locatorKey.endsWith("_id")) {
+			element = driver.findElement(By.id(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_name")) {
+			element = driver.findElement(By.name(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_classname")) {
+			element = driver.findElement(By.className(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_xpath")) {
+			element = driver.findElement(By.xpath(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_css")) {
+			element = driver.findElement(By.cssSelector(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_linktext")) {
+			element = driver.findElement(By.linkText(orProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_partiallinktext")) {
+			element = driver.findElement(By.partialLinkText(orProp.getProperty(locatorKey)));
+		}
+		return element;
+		
+	}
+	
+	
+	public static void clickElement(String locatorKey) 
+	{
+		getElement(locatorKey).click();
+		//driver.findElement(By.xpath(locatorKey)).click();
+	}
+
+	
+
+	public static void typeText(String locatorKey, String text) 
+	{
+		getElement(locatorKey).sendKeys(text);
+		//driver.findElement(By.name(locatorKey)).sendKeys(text);
+	}
+
+	public static void selectOption(String locatorKey, String item) 
+	{
+		getElement(locatorKey).sendKeys(item);
+		//driver.findElement(By.id(locatorKey)).sendKeys(item);
 	}
 
 }
