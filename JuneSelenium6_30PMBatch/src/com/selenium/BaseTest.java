@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.ProfilesIni;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class BaseTest 
 {
@@ -138,5 +139,40 @@ public class BaseTest
 		getElement(locatorKey).sendKeys(item);
 		//driver.findElement(By.id(locatorKey)).sendKeys(item);
 	}
+	
+	
+	//****************************  Verifications  ***************************************
+	
+	public static boolean isElementEqual(String expectedLink) 
+	{
+		String actualLink = driver.findElement(By.linkText("Customer Service")).getText();
+		if(actualLink.equals(expectedLink))
+			return true;
+		else
+			return false;
+	}
+	
+	
+	// ***************************  Reportings  ************************************************
+	
+	
+	public static void reportSuccess(String passMsg) 
+	{
+		test.log(LogStatus.PASS, passMsg);
+	}
+
+	public static void reportFailure(String failMsg) 
+	{
+		test.log(LogStatus.FAIL, failMsg);
+		takesScreenshot();
+	}
+
+
+	public static void takesScreenshot() 
+	{
+		
+		
+	}
+	
 
 }
