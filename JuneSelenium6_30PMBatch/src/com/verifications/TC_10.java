@@ -18,7 +18,7 @@ public class TC_10 extends BaseTest
 		test.log(LogStatus.PASS, "Navigated to url : " + childInstance.getProperty("amazonurl"));
 		
 		
-		String expectedLink = "Customer Service";
+		String expectedLink = "Customer Servic";
 
 		if(!isElementEqual(expectedLink))
 			reportFailure("Both links are not equal....");

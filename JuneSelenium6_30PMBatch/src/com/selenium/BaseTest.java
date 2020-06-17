@@ -1,10 +1,14 @@
 package com.selenium;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
+import org.openqa.selenium.io.FileHandler;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -161,16 +166,22 @@ public class BaseTest
 		test.log(LogStatus.PASS, passMsg);
 	}
 
-	public static void reportFailure(String failMsg) 
+	public static void reportFailure(String failMsg) throws Exception 
 	{
 		test.log(LogStatus.FAIL, failMsg);
-		takesScreenshot();
+		takesScreenShot();
 	}
 
 
-	public static void takesScreenshot() 
+	public static void takesScreenShot() throws Exception
 	{
+		Date dt=new Date();
+		System.out.println(dt);
+		String dateFormat=dt.toString().replace(":", "_").replace(" ", "_")+".png";		
+		File scrFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(scrFile, new File(projectPath+"\\failurescreenshots\\"+dateFormat));
 		
+		test.log(LogStatus.INFO, "Screenshot --->" +test.addScreenCapture(projectPath+"\\failurescreenshots\\"+dateFormat));
 		
 	}
 	
