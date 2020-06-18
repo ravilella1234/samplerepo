@@ -1,61 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
+    <line>
+      <![CDATA[Clicked on Image Link]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="76" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+  <suite name="RegressionSuite" duration-ms="53406" started-at="2020-06-18T14:01:04Z" finished-at="2020-06-18T14:01:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="76" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
-      <class name="com.project.JuneMavenSelenium6_30PMBatch.TC_001">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="beforeSuite" is-config="true" duration-ms="21" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+    <test name="RegressionTest" duration-ms="53406" started-at="2020-06-18T14:01:04Z" finished-at="2020-06-18T14:01:58Z">
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.TC_002">
+        <test-method status="PASS" signature="startProcess()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_002@6295d394]" name="startProcess" is-config="true" duration-ms="8954" started-at="2020-06-18T14:01:45Z" finished-at="2020-06-18T14:01:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="beforeTest" is-config="true" duration-ms="2" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- startProcess -->
+        <test-method status="PASS" signature="amazon()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_002@6295d394]" name="amazon" duration-ms="2388" started-at="2020-06-18T14:01:54Z" finished-at="2020-06-18T14:01:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- amazon -->
+        <test-method status="PASS" signature="endProcess()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_002@6295d394]" name="endProcess" is-config="true" duration-ms="1637" started-at="2020-06-18T14:01:56Z" finished-at="2020-06-18T14:01:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="f()[pri:1, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="f" duration-ms="12" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- endProcess -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.TC_002 -->
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.CheckBox1">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.CheckBox1@143640d5]" name="beforeMethod" is-config="true" duration-ms="11972" started-at="2020-06-18T14:01:32Z" finished-at="2020-06-18T14:01:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="a()[pri:3, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="a" duration-ms="4" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        <test-method status="PASS" signature="checkboxTest()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.CheckBox1@143640d5]" name="checkboxTest" duration-ms="209" started-at="2020-06-18T14:01:43Z" finished-at="2020-06-18T14:01:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- a -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- checkboxTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.CheckBox1@143640d5]" name="afterMethod" is-config="true" duration-ms="865" started-at="2020-06-18T14:01:44Z" finished-at="2020-06-18T14:01:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="afterClass" is-config="true" duration-ms="1" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.CheckBox1 -->
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.RadioButton1">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.RadioButton1@21507a04]" name="beforeMethod" is-config="true" duration-ms="8020" started-at="2020-06-18T14:01:17Z" finished-at="2020-06-18T14:01:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="radioButton()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.RadioButton1@21507a04]" name="radioButton" duration-ms="5150" started-at="2020-06-18T14:01:25Z" finished-at="2020-06-18T14:01:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.TC_001@534df152]" name="afterSuite" is-config="true" duration-ms="0" started-at="2020-06-17T13:58:31Z" finished-at="2020-06-17T13:58:31Z">
+        </test-method> <!-- radioButton -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.RadioButton1@21507a04]" name="afterMethod" is-config="true" duration-ms="1176" started-at="2020-06-18T14:01:30Z" finished-at="2020-06-18T14:01:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.TC_001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.RadioButton1 -->
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1@6646153]" name="setup" is-config="true" duration-ms="10352" started-at="2020-06-18T14:01:04Z" finished-at="2020-06-18T14:01:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="linktesting1()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1@6646153]" name="linktesting1" duration-ms="1822" started-at="2020-06-18T14:01:15Z" finished-at="2020-06-18T14:01:16Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicked on Image Link]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- linktesting1 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1@6646153]" name="tearDown" is-config="true" duration-ms="787" started-at="2020-06-18T14:01:16Z" finished-at="2020-06-18T14:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1 -->
+    </test> <!-- RegressionTest -->
+  </suite> <!-- RegressionSuite -->
 </testng-results>
