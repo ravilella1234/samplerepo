@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="2" name="Test(failed)" parallel="methods">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.project.JuneMavenSelenium6_30PMBatch.parallel.TestNGParallelMethods">
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.CheckBox1">
         <methods>
-          <include name="test1"/>
+          <include name="checkboxTest"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.parallel.TestNGParallelMethods -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.CheckBox1 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

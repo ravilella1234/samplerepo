@@ -12,7 +12,7 @@ public class TC_002 extends BaseTest
 {
   
   
-  @BeforeMethod
+  @BeforeMethod(groups = {"regression","sanity"})
   @Parameters("browser")
   public void startProcess(String bType) throws Exception 
   {
@@ -28,7 +28,7 @@ public class TC_002 extends BaseTest
   }
   
   
-  @Test
+  @Test(groups = {"regression","sanity"})
   public void amazon()
   {
 	  
@@ -43,7 +43,7 @@ public class TC_002 extends BaseTest
 	  
   }
 
-  @AfterMethod
+  @AfterMethod(groups = {"regression","sanity"})
   public void endProcess()
   {
 	 if(driver!=null)

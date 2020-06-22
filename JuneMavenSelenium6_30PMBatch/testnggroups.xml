@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ 
+  <groups>
+  	<run>
+  		<include name="sanity"></include>
+  	</run>
+  </groups>
+
+  <test  name="Test">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.LinksTesting1"/>
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.RadioButton1"/>
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.CheckBox1"/>
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.TC_002"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
