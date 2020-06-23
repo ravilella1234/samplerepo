@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.project.JuneMavenSelenium6_30PMBatch.RadioButton1">
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.HardAssertDemo">
         <methods>
-          <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="radioButton"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.RadioButton1 -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.HardAssertDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

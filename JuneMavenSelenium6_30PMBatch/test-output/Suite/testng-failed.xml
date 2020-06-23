@@ -3,18 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
-    <groups>
-      <run>
-        <include name="smoke"/>
-      </run>
-    </groups>
     <classes>
-      <class name="com.project.JuneMavenSelenium6_30PMBatch.CheckBox1">
+      <class name="com.project.JuneMavenSelenium6_30PMBatch.HardAssertDemo">
         <methods>
-          <include name="checkboxTest"/>
           <include name="beforeMethod"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.CheckBox1 -->
+      </class> <!-- com.project.JuneMavenSelenium6_30PMBatch.HardAssertDemo -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
