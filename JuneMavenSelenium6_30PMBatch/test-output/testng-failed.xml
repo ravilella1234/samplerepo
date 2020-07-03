@@ -5,8 +5,8 @@
     <classes>
       <class name="pageObjectFactory.Login">
         <methods>
+          <include name="custRegistration"/>
           <include name="endProcess"/>
-          <include name="login"/>
           <include name="startProcess"/>
         </methods>
       </class> <!-- pageObjectFactory.Login -->

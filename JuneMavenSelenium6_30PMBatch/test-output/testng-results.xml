@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21577" started-at="2020-07-02T13:47:06Z" finished-at="2020-07-02T13:47:28Z">
+  <suite name="Default suite" duration-ms="24884" started-at="2020-07-03T14:19:24Z" finished-at="2020-07-03T14:19:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21577" started-at="2020-07-02T13:47:06Z" finished-at="2020-07-02T13:47:28Z">
+    <test name="Default test" duration-ms="24884" started-at="2020-07-03T14:19:24Z" finished-at="2020-07-03T14:19:49Z">
       <class name="pageObjectFactory.Login">
-        <test-method status="PASS" signature="startProcess()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="startProcess" is-config="true" duration-ms="14205" started-at="2020-07-02T13:47:06Z" finished-at="2020-07-02T13:47:20Z">
+        <test-method status="PASS" signature="startProcess()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="startProcess" is-config="true" duration-ms="14121" started-at="2020-07-03T14:19:24Z" finished-at="2020-07-03T14:19:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startProcess -->
-        <test-method status="PASS" signature="login()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="login" duration-ms="7286" started-at="2020-07-02T13:47:20Z" finished-at="2020-07-02T13:47:28Z">
+        <test-method status="PASS" signature="custRegistration()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="custRegistration" duration-ms="10691" started-at="2020-07-03T14:19:38Z" finished-at="2020-07-03T14:19:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="endProcess()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="endProcess" is-config="true" duration-ms="1" started-at="2020-07-02T13:47:28Z" finished-at="2020-07-02T13:47:28Z">
+        </test-method> <!-- custRegistration -->
+        <test-method status="PASS" signature="endProcess()[pri:0, instance:pageObjectFactory.Login@436a4e4b]" name="endProcess" is-config="true" duration-ms="0" started-at="2020-07-03T14:19:49Z" finished-at="2020-07-03T14:19:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endProcess -->
