@@ -13,12 +13,12 @@ public class Table1
 	public static void main(String[] args) 
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\MayBatch Drivers\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.w3schools.com/html/html_tables.asp");
 		
 		List<WebElement> tr_collection = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr"));
-		for(WebElement trElement  : tr_collection)
+		for(WebElement trElement : tr_collection)
 		{
 			List<WebElement> td_collection = trElement.findElements(By.tagName("td"));
 			for(WebElement td_Element : td_collection)
@@ -26,7 +26,6 @@ public class Table1
 				if(td_Element.getText().contains("Helen Bennett"))
 				System.out.println(td_Element.getText());
 			}
-			
 		}
 
 	}
