@@ -23,10 +23,11 @@ public class Table1
 			List<WebElement> td_collection = trElement.findElements(By.tagName("td"));
 			for(WebElement td_Element : td_collection)
 			{
-				if(td_Element.getText().contains("Helen Bennett"))
+				if(td_Element.getText().contains("Roland Mendel"))
 				System.out.println(td_Element.getText());
 			}
 		}
+		
 
 	}
 

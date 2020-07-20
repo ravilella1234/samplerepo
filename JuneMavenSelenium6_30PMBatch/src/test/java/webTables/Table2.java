@@ -1,75 +1,67 @@
 package webTables;
 
+import java.awt.Desktop.Action;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 
 public class Table2 
 {
-	public static WebDriver driver = null ;
-	public static WebDriverWait wait ;
+	public static String month;
+	public static WebDriver driver;
+	static Actions a ; 
 
-	public static void main(String[] args) throws Exception 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\MayBatch Drivers\\chromedriver.exe");
-		 driver = new ChromeDriver();
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("user-data-dir=C:\\Users\\DELL\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 8");
+		option.addArguments("--disable-notifications");
+		
+		driver=new ChromeDriver(option);
 		driver.manage().window().maximize();
-		driver.get("https://www.tripadvisor.in/");
-		wait = new WebDriverWait(driver, 30);
+		driver.get("https://www.redbus.in/");
+		driver.findElement(By.id("onward_cal")).click();
 		
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[contains(text(),'More')]")))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//a[contains(text(),'Flights')]")))).click();
-				
-		//checkIn
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//span[@class='picker-label target'])[1]")))).click();
-		String date = "10-Jul 2020";
-		String[] splitter1 = date.split("-");
-		String checkInDay = splitter1[0];
-		String checkInMonth = splitter1[1];
-		Thread.sleep(4000);
-		selectDate(checkInDay,checkInMonth);
+		String myDate = "25-Nov 2020";
+		String[] strarr = myDate.split("-");
+		String startDate = strarr[0];
+		String startMonth = strarr[1];
 		
-		//checkOut
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//span[@class='picker-label target'])[2]")))).click();
-		String date1 = "15-Jul 2020";
-		String[] splitter2 = date1.split("-");
-		String checkOutDay = splitter2[0];
-		String checkOutMonth = splitter2[1];
-		Thread.sleep(4000);
-		selectDate(checkOutDay,checkOutMonth);
-	}
+		getMonth(startMonth);
+		Thread.sleep(2000);
+		getDate(startDate);
 
-	public static void selectDate(String day, String year) throws Exception 
+	}
+	
+	public static void getDate(String startDate) 
 	{
-		System.out.println("iam in..");
-		wait = new WebDriverWait(driver, 30);
-		List<WebElement> elements = driver.findElements(By.xpath("//div[@class='rsdc-months']/span/span[1]"));
-		for(int i=0;i<elements.size();i++)
+		List<WebElement> tr_collection = driver.findElements(By.xpath("//table[@class='rb-monthTable first last']/tbody/tr"));
+		for(WebElement trElement: tr_collection)
 		{
-			System.out.println(elements.get(i).getText());
-			if(elements.get(i).getText().equals(year))
+			List<WebElement> td_collection = trElement.findElements(By.tagName("td"));
+			for( WebElement tdElement : td_collection)
 			{
-				List<WebElement> days = driver.findElements(By.xpath("//div[@class='rsdc-months']/span["+ (i+1) +"]/span"));
-				for(WebElement d : days)
-				{
-					if(d.getText().equals(day))
-					{
-						d.click();
-						break;
-					}
-				}
+				System.out.println(tdElement.getText());
+				if(tdElement.getText().equals(startDate))
+					a  = new Actions(driver);
+				a.click(tdElement).perform();
 			}
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[contains(@class,'rsdc-next rsdc-nav ui_icon single-chevron-right-circle')]")))).click();
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[contains(@class,'rsdc-next rsdc-nav ui_icon single-chevron-right-circle')]")))).click();
 		
-		Thread.sleep(2000);
-		selectDate(day, year);
+	}
+
+	public static void getMonth(String sMonth)
+	{
+		month = driver.findElement(By.xpath("//table[@class='rb-monthTable first last']/tbody/tr[1]/td[2]")).getText();
+		if(!month.equals(sMonth))
+			driver.findElement(By.xpath("//table[@class='rb-monthTable first last']/tbody/tr[1]/td/button[contains(text(),'>')]")).click();
+		getMonth(sMonth);	
 	}
 
 }
