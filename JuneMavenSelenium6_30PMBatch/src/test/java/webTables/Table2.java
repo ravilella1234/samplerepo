@@ -1,6 +1,5 @@
 package webTables;
 
-import java.awt.Desktop.Action;
 import java.util.List;
 
 import org.openqa.selenium.By;
