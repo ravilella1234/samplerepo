@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.testng.annotations.BeforeTest;
 
+import com.project.Salesforce.driverClass.DriverScript;
 import com.project.Salesforce.utilities.ExcelAPI;
 
 public class BaseTest 
@@ -14,8 +15,10 @@ public class BaseTest
 	public static Properties baseproperties;
 	public static Properties childproperties;
 	public static ExcelAPI xls;
+	public String testName;
+	public DriverScript ds;
 	
-	public static void load() throws Exception
+	public  void load() throws Exception
 	{
 		fis = new FileInputStream(projectPath + "//src//test//resources//environment.properties");
 		baseproperties = new Properties();
@@ -29,9 +32,17 @@ public class BaseTest
 		String value = childproperties.getProperty("zohourl");
 		System.out.println(value);
 		
-		//init the excel file
+		//init the TestName
+		testName = this.getClass().getSimpleName();
+		System.out.println(testName);
+		
 		//How do i come to know which suite Excel file to load dynamically
-		xls = new ExcelAPI(childproperties.getProperty("suitea_xls"));
+		String[] pack = this.getClass().getPackage().getName().split("\\.");
+		String suiteName = pack[pack.length-1];
+		System.out.println(suiteName);
+		
+		//init the excel file
+		xls = new ExcelAPI(childproperties.getProperty(suiteName+"_xls"));
 	}
 	
 	 @BeforeTest
