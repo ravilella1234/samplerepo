@@ -2,31 +2,31 @@
 <testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1576" started-at="2020-08-04T14:04:18Z" finished-at="2020-08-04T14:04:19Z">
+  <suite name="Default suite" duration-ms="1571" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1576" started-at="2020-08-04T14:04:18Z" finished-at="2020-08-04T14:04:19Z">
+    <test name="Default test" duration-ms="1571" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
       <class name="com.project.Salesforce.suitea.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="init" is-config="true" duration-ms="1424" started-at="2020-08-04T14:04:18Z" finished-at="2020-08-04T14:04:19Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="init" is-config="true" duration-ms="1435" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="56" started-at="2020-08-04T14:04:19Z" data-provider="getData" finished-at="2020-08-04T14:04:19Z">
+        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="40" started-at="2020-08-05T13:51:31Z" data-provider="getData" finished-at="2020-08-05T13:51:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{ExpectedResult=LoginSuccess, Password=zoho2015, Runmode=Y, UserName=ravilella.2015@gmail.com, Browser=chrome}]]>
+                <![CDATA[{Password=zoho2015, Runmode=Y, ExpectedResults=LoginSuccess, UserName=ravilella.2015@gmail.com, Url=https://www.zoho.com/, Browser=chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="6" started-at="2020-08-04T14:04:19Z" data-provider="getData" finished-at="2020-08-04T14:04:19Z">
+        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="4" started-at="2020-08-05T13:51:31Z" data-provider="getData" finished-at="2020-08-05T13:51:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{ExpectedResult=LoginSuccess, Password=P1, Runmode=N, UserName=U1, Browser=firefox}]]>
+                <![CDATA[{Password=P1, Runmode=N, ExpectedResults=LoginSuccess, UserName=U1, Url=, Browser=firefox}]]>
               </value>
             </param>
           </params>
@@ -36,7 +36,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Runmode is set to no
-at com.project.Salesforce.suitea.LoginTest.f(LoginTest.java:21)
+at com.project.Salesforce.suitea.LoginTest.f(LoginTest.java:20)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

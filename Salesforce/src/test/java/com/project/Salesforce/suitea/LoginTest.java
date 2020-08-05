@@ -7,7 +7,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.project.Salesforce.Base.BaseTest;
-import com.project.Salesforce.driverClass.DriverScript;
 import com.project.Salesforce.utilities.DataUtils;
 
 public class LoginTest extends BaseTest
@@ -20,7 +19,6 @@ public class LoginTest extends BaseTest
 	  if(data.get("Runmode").equals("N"))
 		  throw new SkipException("Runmode is set to no");
 	  
-	  ds = new DriverScript();
 	  ds.executeKeywords(xls, testName, data);
   }
   
