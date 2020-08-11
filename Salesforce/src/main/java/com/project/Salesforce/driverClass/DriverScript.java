@@ -1,5 +1,6 @@
 package com.project.Salesforce.driverClass;
 
+import java.lang.reflect.Method;
 import java.util.Hashtable;
 import java.util.Properties;
 
@@ -20,7 +21,7 @@ public class DriverScript
 		this.orProp = orProp;
 	}
 
-	public void executeKeywords(ExcelAPI xls,String testName, Hashtable<String, String> testdata)
+	public void executeKeywords(ExcelAPI xls,String testName, Hashtable<String, String> testdata) throws Exception, Exception
 	{
 		System.out.println("iam driverscript class....");
 		int rows = xls.getRowCount("Keyword");
@@ -45,16 +46,17 @@ public class DriverScript
 				app.setObjectKey(objectKey);
 				app.setDataKey(dataKey);
 				
-				if(kWord.equals("openBrowser"))
-					app.openBrowser();
-				else if(kWord.equals("navigateUrl"))
-					app.navigateUrl();
-				else if(kWord.equals("click"))
-					app.click();
-				else if(kWord.equals("type"))
-					app.type();
-				else if(kWord.equals("validatLogin"))
-					app.validatLogin();
+				/*
+				 * if(kWord.equals("openBrowser")) app.openBrowser(); else
+				 * if(kWord.equals("navigateUrl")) app.navigateUrl(); else
+				 * if(kWord.equals("click")) app.click(); else if(kWord.equals("type"))
+				 * app.type(); else if(kWord.equals("validatLogin")) app.validatLogin(); else
+				 * if(kWord.equals("verifyTitle")) app.verifyTitle();
+				 */
+				
+				//Reflection API
+				Method method = app.getClass().getMethod(kWord);
+				method.invoke(app);
 			}
 			
 			

@@ -12,7 +12,7 @@ import com.project.Salesforce.utilities.DataUtils;
 public class TestA extends BaseTest
 {
 	@Test(dataProvider = "getData")
-	  public void f(Hashtable<String, String> data) 
+	  public void f(Hashtable<String, String> data) throws Exception 
 	  {
 		  System.out.println("iam f test");
 		  ds = new DriverScript();

@@ -2,16 +2,16 @@
 <testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1571" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
+  <suite name="Default suite" duration-ms="23617" started-at="2020-08-11T13:47:35Z" finished-at="2020-08-11T13:47:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1571" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
+    <test name="Default test" duration-ms="23617" started-at="2020-08-11T13:47:35Z" finished-at="2020-08-11T13:47:59Z">
       <class name="com.project.Salesforce.suitea.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="init" is-config="true" duration-ms="1435" started-at="2020-08-05T13:51:30Z" finished-at="2020-08-05T13:51:31Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="init" is-config="true" duration-ms="1504" started-at="2020-08-11T13:47:35Z" finished-at="2020-08-11T13:47:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="40" started-at="2020-08-05T13:51:31Z" data-provider="getData" finished-at="2020-08-05T13:51:31Z">
+        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="21992" started-at="2020-08-11T13:47:37Z" data-provider="getData" finished-at="2020-08-11T13:47:59Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="4" started-at="2020-08-05T13:51:31Z" data-provider="getData" finished-at="2020-08-05T13:51:31Z">
+        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="7" started-at="2020-08-11T13:47:59Z" data-provider="getData" finished-at="2020-08-11T13:47:59Z">
           <params>
             <param index="0">
               <value>
