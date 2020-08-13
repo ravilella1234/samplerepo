@@ -56,6 +56,7 @@ public class GenericKeywords
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().deleteAllCookies();
 		
 	}
 	
@@ -107,6 +108,12 @@ public class GenericKeywords
 		}
 		
 		return element;
+	}
+	
+	public void quit()
+	{
+		if(driver!=null)
+			driver.quit();
 	}
 
 }

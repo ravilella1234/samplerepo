@@ -3,6 +3,8 @@ package com.project.Salesforce.Base;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.project.Salesforce.driverClass.DriverScript;
@@ -58,8 +60,20 @@ public class BaseTest
 	 public void init() throws Exception 
 	 {
 		  System.out.println("iam init method from BeforeTest....");
-		  load(); 
-				  
+		  load(); 		  
+	 }
+	 
+	 @BeforeMethod
+	 public void initMethod()
+	 {
+		System.out.println("Beforemethod"); 
 	 }
 
+	 @AfterMethod
+	 public void quit()
+	 {
+		 if(ds!=null)
+			 ds.quit();
+	 }
+	 
 }

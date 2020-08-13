@@ -2,16 +2,20 @@
 <testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35495" started-at="2020-08-12T13:33:25Z" finished-at="2020-08-12T13:34:01Z">
+  <suite name="Default suite" duration-ms="21234" started-at="2020-08-13T13:48:02Z" finished-at="2020-08-13T13:48:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35495" started-at="2020-08-12T13:33:25Z" finished-at="2020-08-12T13:34:01Z">
+    <test name="Default test" duration-ms="21234" started-at="2020-08-13T13:48:02Z" finished-at="2020-08-13T13:48:23Z">
       <class name="com.project.Salesforce.suitea.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="init" is-config="true" duration-ms="1517" started-at="2020-08-12T13:33:25Z" finished-at="2020-08-12T13:33:27Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="init" is-config="true" duration-ms="1406" started-at="2020-08-13T13:48:02Z" finished-at="2020-08-13T13:48:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="33890" started-at="2020-08-12T13:33:27Z" data-provider="getData" finished-at="2020-08-12T13:34:01Z">
+        <test-method status="PASS" signature="initMethod()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="initMethod" is-config="true" duration-ms="1" started-at="2020-08-13T13:48:03Z" finished-at="2020-08-13T13:48:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initMethod -->
+        <test-method status="PASS" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="f" duration-ms="17765" started-at="2020-08-13T13:48:03Z" data-provider="getData" finished-at="2020-08-13T13:48:21Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +26,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@3b2cf7ab]" name="f" duration-ms="4" started-at="2020-08-12T13:34:01Z" data-provider="getData" finished-at="2020-08-12T13:34:01Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="quit" is-config="true" duration-ms="1963" started-at="2020-08-13T13:48:21Z" finished-at="2020-08-13T13:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="initMethod()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="initMethod" is-config="true" duration-ms="1" started-at="2020-08-13T13:48:23Z" finished-at="2020-08-13T13:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initMethod -->
+        <test-method status="SKIP" signature="f(java.util.Hashtable)[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="f" duration-ms="3" started-at="2020-08-13T13:48:23Z" data-provider="getData" finished-at="2020-08-13T13:48:23Z">
           <params>
             <param index="0">
               <value>
@@ -36,7 +48,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Runmode is set to no
-at com.project.Salesforce.suitea.LoginTest.f(LoginTest.java:20)
+at com.project.Salesforce.suitea.LoginTest.f(LoginTest.java:21)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -68,6 +80,10 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.project.Salesforce.suitea.LoginTest@5c1a8622]" name="quit" is-config="true" duration-ms="0" started-at="2020-08-13T13:48:23Z" finished-at="2020-08-13T13:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
       </class> <!-- com.project.Salesforce.suitea.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
