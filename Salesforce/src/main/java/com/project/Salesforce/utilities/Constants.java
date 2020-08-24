@@ -2,6 +2,8 @@ package com.project.Salesforce.utilities;
 
 public class Constants 
 {
+	public static final String TESTCASES_SHEET = "TestCases" ;
+	public static final String DATA_SHEET = "Data";
 	public static final String KEYWORD_SHEET = "Keyword";
 	public static final String TCID_COL = "TCID";
 	public static final String KEYWORD_COL = "Keywords";

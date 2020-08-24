@@ -60,5 +60,24 @@ public class DataUtils
 	  
 	return data;
 	}
+	
+	//Function to check the runmode of test
+	public static boolean isSkip(String testName,ExcelAPI xls)
+	{
+		int rows = xls.getRowCount(Constants.TESTCASES_SHEET);
+		for(int rNum=1;rNum<rows;rNum++)
+		{
+			String tcid = xls.getCellData(Constants.TESTCASES_SHEET, Constants.TCID_COL, rNum);
+			if(tcid.equals(testName)) 
+			{
+				String runmode = xls.getCellData(Constants.TESTCASES_SHEET, Constants.RUNMODE_COL, rNum);
+				if(runmode.equals(Constants.RUNMODE_NO))
+					return true;
+				else
+					return false;
+			}
+		}
+		return true;
+	}
 
 }

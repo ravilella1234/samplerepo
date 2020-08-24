@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest
   public void f(Hashtable<String, String> data) throws Exception 
   {
 	  System.out.println("iam f test");
-	  if(data.get(Constants.RUNMODE_COL).equals(Constants.RUNMODE_NO))
+	  if(DataUtils.isSkip(testName, xls) || data.get(Constants.RUNMODE_COL).equals(Constants.RUNMODE_NO))
 		  throw new SkipException("Runmode is set to no");
 	  
 	  ds.executeKeywords(xls, testName, data);
