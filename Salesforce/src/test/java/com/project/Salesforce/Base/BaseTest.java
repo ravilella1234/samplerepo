@@ -3,11 +3,13 @@ package com.project.Salesforce.Base;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.project.Salesforce.driverClass.DriverScript;
+import com.project.Salesforce.reports.ExtentManager;
 import com.project.Salesforce.utilities.ExcelAPI;
 
 public class BaseTest 
@@ -20,6 +22,8 @@ public class BaseTest
 	public static ExcelAPI xls;
 	public String testName;
 	public DriverScript ds;
+	public  ExtentReports rep;
+	public  ExtentTest test;
 	
 	public  void load() throws Exception
 	{
@@ -54,26 +58,29 @@ public class BaseTest
 		//init Driverscript
 		 ds = new DriverScript();
 		 ds.setOrProp(orProp);
+		 
 	}
 	
 	 @BeforeTest
 	 public void init() throws Exception 
 	 {
 		  System.out.println("iam init method from BeforeTest....");
-		  load(); 		  
+		  load(); 
+		 rep =  ExtentManager.getInstance(baseproperties.getProperty("reportPath"));
+		test =  rep.createTest(testName);
+		ds.setTest(test);
 	 }
 	 
-	 @BeforeMethod
-	 public void initMethod()
-	 {
-		System.out.println("Beforemethod"); 
-	 }
+	 
 
-	 @AfterMethod
+	 @AfterTest
 	 public void quit()
 	 {
 		 if(ds!=null)
 			 ds.quit();
+		 
+		 if(rep!=null)
+			 rep.flush();
 	 }
 	 
 }

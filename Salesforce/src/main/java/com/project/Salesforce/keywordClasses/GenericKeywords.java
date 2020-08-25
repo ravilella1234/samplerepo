@@ -13,6 +13,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class GenericKeywords 
 {
 	public Properties orProp;
@@ -20,8 +23,15 @@ public class GenericKeywords
 	public String dataKey;
 	public Hashtable<String, String> data;
 	public WebDriver driver;
+	public ExtentTest test;
 	
 	
+	
+	
+	public void setTest(ExtentTest test) {
+		this.test = test;
+	}
+
 	public void setOrProp(Properties orProp) {
 		this.orProp = orProp;
 	}
@@ -66,12 +76,14 @@ public class GenericKeywords
 	public void navigateUrl()
 	{
 		System.out.println("Navigating the url...." + data.get(dataKey));
+		test.log(Status.INFO, "Navigating the url...." + data.get(dataKey));
 		driver.get(data.get(dataKey));
 	}
 	
 	public void click()
 	{
 		System.out.println("Clicking on element..." + orProp.getProperty(objectKey));
+		test.log(Status.INFO, "Clicking on element..." + orProp.getProperty(objectKey));
 		//driver.findElement(By.xpath(orProp.getProperty(objectKey))).click();
 		getElement(objectKey).click();
 	}
@@ -81,6 +93,7 @@ public class GenericKeywords
 	public void type()
 	{
 		System.out.println("Typing the text... " + orProp.getProperty(objectKey) + "------" +  data.get(dataKey));
+		test.log(Status.INFO, "Typing the text... " + orProp.getProperty(objectKey) + "------" +  data.get(dataKey));
 		//driver.findElement(By.xpath(orProp.getProperty(objectKey))).sendKeys(data.get(dataKey));
 		getElement(objectKey).sendKeys(data.get(dataKey));
 	}

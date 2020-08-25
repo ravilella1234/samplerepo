@@ -5,7 +5,6 @@
     <classes>
       <class name="com.project.Salesforce.suitea.LoginTest">
         <methods>
-          <include name="initMethod"/>
           <include name="init"/>
           <include name="quit"/>
           <include name="f" invocation-numbers="1"/>

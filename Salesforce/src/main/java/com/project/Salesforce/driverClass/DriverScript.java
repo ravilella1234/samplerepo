@@ -4,6 +4,8 @@ import java.lang.reflect.Method;
 import java.util.Hashtable;
 import java.util.Properties;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.project.Salesforce.keywordClasses.Applicationkeywords;
 import com.project.Salesforce.utilities.Constants;
 import com.project.Salesforce.utilities.ExcelAPI;
@@ -12,8 +14,15 @@ public class DriverScript
 {
 	public Properties orProp;
 	Applicationkeywords app;
+	public ExtentTest test;
 		
+
 	
+
+	public void setTest(ExtentTest test) {
+		this.test = test;
+	}
+
 	public Properties getOrProp() {
 		return orProp;
 	}
@@ -47,17 +56,13 @@ public class DriverScript
 				String dataKey = xls.getCellData(Constants.KEYWORD_SHEET, Constants.DATA_COL, rNum);
 				String data = testdata.get(dataKey);
 				
+				//test.log(Status.INFO, "iam in driverscript");
+				//test.log(Status.INFO, tcid + "====" + kWord + "====" + orProp.getProperty(objectKey) + "====" + data);
 				//System.out.println(tcid + "====" + kWord + "====" + orProp.getProperty(objectKey) + "====" + data);
 				app.setObjectKey(objectKey);
 				app.setDataKey(dataKey);
+				app.setTest(test);
 				
-				/*
-				 * if(kWord.equals("openBrowser")) app.openBrowser(); else
-				 * if(kWord.equals("navigateUrl")) app.navigateUrl(); else
-				 * if(kWord.equals("click")) app.click(); else if(kWord.equals("type"))
-				 * app.type(); else if(kWord.equals("validatLogin")) app.validatLogin(); else
-				 * if(kWord.equals("verifyTitle")) app.verifyTitle();
-				 */
 				
 				//Reflection API
 				Method method = app.getClass().getMethod(kWord);
