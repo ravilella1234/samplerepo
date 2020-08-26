@@ -7,7 +7,7 @@
         <methods>
           <include name="init"/>
           <include name="quit"/>
-          <include name="f" invocation-numbers="1"/>
+          <include name="f" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.project.Salesforce.suitea.LoginTest -->
     </classes>

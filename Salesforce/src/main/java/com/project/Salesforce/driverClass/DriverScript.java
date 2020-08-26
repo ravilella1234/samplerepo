@@ -53,6 +53,7 @@ public class DriverScript
 			{
 				String kWord = xls.getCellData(Constants.KEYWORD_SHEET, Constants.KEYWORD_COL, rNum);
 				String objectKey = xls.getCellData(Constants.KEYWORD_SHEET, Constants.OBJECT_COL, rNum);
+				String proceedOnFail = xls.getCellData(Constants.KEYWORD_SHEET, Constants.PROCEED_COL, rNum);
 				String dataKey = xls.getCellData(Constants.KEYWORD_SHEET, Constants.DATA_COL, rNum);
 				String data = testdata.get(dataKey);
 				
@@ -60,6 +61,7 @@ public class DriverScript
 				//test.log(Status.INFO, tcid + "====" + kWord + "====" + orProp.getProperty(objectKey) + "====" + data);
 				//System.out.println(tcid + "====" + kWord + "====" + orProp.getProperty(objectKey) + "====" + data);
 				app.setObjectKey(objectKey);
+				app.setProceedOnFail(proceedOnFail);
 				app.setDataKey(dataKey);
 				app.setTest(test);
 				
@@ -67,10 +69,9 @@ public class DriverScript
 				//Reflection API
 				Method method = app.getClass().getMethod(kWord);
 				method.invoke(app);
-			}
-			
-			
+			}	
 		}
+		app.assertAll();
 	}
 
 }

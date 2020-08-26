@@ -12,6 +12,6 @@ public class Constants
 	public static final String RUNMODE_COL = "Runmode";
 	public static final String RUNMODE_NO = "N";
 	public static final String RUNMODE_YES = "Y";
-	
+	public static final String PROCEED_COL="ProceedOnFailure";
 	
 }

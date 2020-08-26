@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -24,10 +25,15 @@ public class GenericKeywords
 	public Hashtable<String, String> data;
 	public WebDriver driver;
 	public ExtentTest test;
+	public String proceedOnFail;
+	public SoftAssert softAssert = new SoftAssert();
 	
 	
 	
-	
+	public void setProceedOnFail(String proceedOnFail) {
+		this.proceedOnFail = proceedOnFail;
+	}
+
 	public void setTest(ExtentTest test) {
 		this.test = test;
 	}
@@ -180,6 +186,7 @@ public class GenericKeywords
 		{
 			e.printStackTrace();
 			//Report the failure status
+			reportFailure("Element Not Found" + objectKey);
 		}
 		
 		return element;
@@ -191,9 +198,20 @@ public class GenericKeywords
 	{
 		//Fail the test in giving Fail status
 		System.out.println(failureMsg);
+		test.log(Status.FAIL, failureMsg);
 		
+		if(proceedOnFail.equals("Y"))
+			softAssert.fail(failureMsg); // softAssert
+		else
+			softAssert.fail(failureMsg);
+			softAssert.assertAll();
 		//Take the screenshot and embedded it to Html Reports
 		
+	}
+	
+	public void assertAll()
+	{
+		softAssert.assertAll();
 	}
 	
 	

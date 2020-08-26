@@ -20,7 +20,7 @@ public class LoginTest extends BaseTest
 	  System.out.println("iam f test");
 	  test.log(Status.INFO, "Starting the LogiTest");
 	  test.log(Status.INFO, data.toString());
-	  test.log(Status.PASS, "Test is Passed....");
+	 // test.log(Status.PASS, "Test is Passed....");
 	  
 	  if(DataUtils.isSkip(testName, xls) || data.get(Constants.RUNMODE_COL).equals(Constants.RUNMODE_NO))
 	  {
