@@ -1,6 +1,6 @@
 Feature: Feature to test login functionality
 
-	@regression
+  @regression
   Scenario: Check login is successful with valid cridientials
     Given user is on login page
     When user enters username and password
