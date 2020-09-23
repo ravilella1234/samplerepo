@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="14.998">
-<testcase classname="feature to test google search functionality" name="Validate google search is working or not" time="14.481">
-<system-out><![CDATA[Given Browser to open.......................................................passed
-And user is on google search page...........................................passed
-When user enters a textin search box........................................passed
-And Hits enter button.......................................................passed
-Then User is navigated to search results page...............................passed
-]]></system-out>
-</testcase>
-<testcase classname="Feature to test login functionality" name="Check login is successful with valid cridientials" time="0.004">
-<system-out><![CDATA[Given user is on login page.................................................passed
-When user enters username and password......................................passed
-And Clicks on login buton...................................................passed
-Then user should navigated to the home page.................................passed
-]]></system-out>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.893">
+<testcase classname="Test the login functionality" name="Dummy scenario2" time="0.068">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given hello.................................................................undefined
+]]></failure>
 </testcase>
 </testsuite>
